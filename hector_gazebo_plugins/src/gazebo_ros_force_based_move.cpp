@@ -286,9 +286,9 @@ namespace gazebo
   {
 
     ros::Time current_time = ros::Time::now();
-    std::string odom_frame = tf::resolve(tf_prefix_, odometry_frame_);
+    std::string odom_frame = tf::resolve(robot_namespace_, odometry_frame_);
     std::string base_footprint_frame = 
-      tf::resolve(tf_prefix_, robot_base_frame_);
+      tf::resolve(robot_namespace_, robot_base_frame_);
 
 #if (GAZEBO_MAJOR_VERSION >= 8)
     ignition::math::Vector3d angular_vel = parent_->RelativeAngularVel();
